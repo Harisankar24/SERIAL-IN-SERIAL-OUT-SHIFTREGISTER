@@ -26,17 +26,53 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 **Procedure**
 
 /* write all the steps invloved */
+Step1: Define the specifications and initialize the design. 
+Step2: Declare the name of the entity and architecture by using VHDL source code. 
+Step3: Write the source code in VERILOG. 
+Step4: Check the syntax and debug the errors if found, obtain the synthesis report. 
+Step5: Verify the output by simulating the source code. 
+Step6: Write all the possible combinations of input using test bench. 
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-Developed by: RegisterNumber:
+Developed by:Harisankar s
+RegisterNumber:24900861
+module exp10(a, b, clk, rst, acc); 
+input [7:0] a; 
+input [7:0] b; 
+input clk; 
+input rst; 
+output [15:0] acc; 
+reg [15:0] acc; 
+reg [15:0] pd; 
+reg [15:0] adder; 
+always @ (posedge(clk) or posedge(rst)) 
+begin 
+if (rst==1'b1) 
+  begin 
+  adder=8'b00000000; 
+  end 
+  else 
+  begin 
+  pd=a*b; 
+  adder=adder+pd; 
+  end 
+  acc=adder; 
+  end 
+  endmodule
 
 */
 
 **RTL LOGIC FOR SISO Shift Register**
+![Screenshot 2024-12-21 100210](https://github.com/user-attachments/assets/616d39b7-ba70-407d-8472-e2295df42fbd)
+
 
 **TIMING DIGRAMS FOR SISO Shift Register**
+![Screenshot 2024-12-21 100337](https://github.com/user-attachments/assets/7b91ab74-af2a-419b-aa93-5601ff3c3ee5)
+
 
 **RESULTS**
+ Thus the OUTPUT’s of MAC Unit  are verified by synthesizing and simulating the VHDL and 
+VERILOG code. 
